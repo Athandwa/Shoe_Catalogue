@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="shoe_catalogue.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <title>Shoe Catalogue</title>
+</head>
+
+<body>
+    <script type="text/x-handlebars-tamplate" class="shoeTamplate">
+        <table>
+          <thead>
+            <th>Stock</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Brand</th>
+            <th>Colour</th>
+          </thead>
+        {{#each shoeList}}
+          <tbody>
+            <td>{{Stock}}</td>
+            <td>{{Size}}</td>
+            <td>{{Price}}</td>
+            <td>{{Brand}}</td>
+            <td>{{Colour}}</td>
+          </tbody>
+          {{/each}}
+        </table>
+    </script>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#ladies">Ladies Shoes</a>
+        <a href="#men">Men's Shoes</a>
+        <a href="#about">About</a>
+    </div>
+    <h1>Shoe Catalogue...</h1>
+
+    <div class="colors">
+        Colours: <select class="shoeColors">
+  <option name="color"></option>
+  <option name="color">Black</option>
+  <option name="color">Brown</option>
+  <option name="color">Tan</option>
+
+</select>
+    </div>
+    <div class="sizes">
+        Size: <select class="shoeSize">
+  <option name="number"></option>
+  <option name="number">6</option>
+  <option name="number">7</option>
+  <option name="number">8</option>
+  <option name="number">9</option>
+  <option name="number">10</option>
+</div>
+<hr>
+<div class="stocks">
+  Stock Available: <select>
+    Stock Available: <select  class="Stock">
+    <option name="shoe"></option>
+    <option name="shoe">Barker</option>
+    <option name="shoe">Crocket & Jones</option>
+    <option name="shoe">Bass</option>
+    <option name="shoe">Florsheim</option>
+  </select>
+    </div>
+    <div class="checkButton">
+      <button id="check" onclick="checkingStock()">Check Stock</button>
+    </div>
+    <div class="displayALl">
+      <button type="button" name="button">Display All</button>
+    </div>
+    <div id="tableStock">
+
+    </div>
+</body>
+<script src="shoe_catalogue.js" charset="utf-8"></script>
+
+</html>
