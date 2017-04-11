@@ -18,6 +18,7 @@
 h1{
   padding-top: 30px;
   font-style: italic;
+  text-shadow: 0.1em 0.1em 0.15em #333;
 }
 .colors{
   padding-top: 20px;
@@ -29,6 +30,14 @@ h1{
 .checkButton{
   padding-top: 30px;
 }
-.displayALl{
+.displayStock{
   padding-top: 20px;
+  padding-bottom: 20px;
+}
+.addButton{
+  border-radius: 4px;
+}
+#tableStock{
+  padding-top: 10px;
+  background-color: orange;
 }
