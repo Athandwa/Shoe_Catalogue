@@ -38,14 +38,29 @@
     </div>
     <h1>Shoe Catalogue...</h1>
 
-    <div class="colors">
+<script type="text/x-handlebars-tamplate" class="colorTemp">
+  <select>
+<option value="colour" disabled selected="colour">
+{{#each color}}
+<option value="{{Colour}}">{{Colour}}</option>
+{{/each}}
+</option>
+  </select>
+</script>
+
+<div id="colorDisplay">
+
+</div>
+
+
+    <!-- <div class="colors">
         Colours: <select class="shoeColors">
   <option name="color"></option>
   <option name="color">Black</option>
   <option name="color">Brown</option>
   <option name="color">Tan</option>
 
-</select>
+</select> -->
     </div>
     <div class="sizes">
         Size: <select class="shoeSize">
@@ -78,6 +93,7 @@
       <input type="text" name="text" class="price" placeholder="Price...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <input type="text" name="text" class="stock" placeholder="Stock...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     </div>
+  <hr>
     <h1>Stock Available</h1>
     <div id="tableStock">
 

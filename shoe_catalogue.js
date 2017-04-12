@@ -128,3 +128,18 @@ add.addEventListener('click', function() {
     shoes.push(shoeList);
 
 });
+
+
+
+
+var colorTemp = document.querySelector('.colorTemp');
+var compileColor = Handlebars.compile(colorTemp.innerHTML);
+var colorDisplay = document.getElementById('colorDisplay');
+
+
+(function () {
+  var results = compileColor({
+    color: shoes});
+ colorDisplay.innerHTML = results;
+})
+()
