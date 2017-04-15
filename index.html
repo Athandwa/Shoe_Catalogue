@@ -11,22 +11,22 @@
 <body>
     <script type="text/x-handlebars-tamplate" class="shoeTamplate">
         <table>
-          <thead>
-            <th>Stock</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Brand</th>
-            <th>Colour</th>
-          </thead>
-        {{#each shoeList}}
-          <tbody>
-            <td>{{Stock}}</td>
-            <td>{{Size}}</td>
-            <td>{{Price}}</td>
-            <td>{{Brand}}</td>
-            <td>{{Colour}}</td>
-          </tbody>
-          {{/each}}
+            <thead>
+                <th>Stock</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th>Colour</th>
+            </thead>
+            {{#each shoeList}}
+            <tbody>
+                <td>{{Stock}}</td>
+                <td>{{Size}}</td>
+                <td>{{Price}}</td>
+                <td>{{Brand}}</td>
+                <td>{{Colour}}</td>
+            </tbody>
+            {{/each}}
         </table>
     </script>
     <div class="navbar">
@@ -38,62 +38,55 @@
     </div>
     <h1>Shoe Catalogue...</h1>
 
-<script type="text/x-handlebars-tamplate" class="colorTemp">
-  <select>
-<option value="colour" disabled selected="colour">
-{{#each color}}
-<option value="{{Colour}}">{{Colour}}</option>
-{{/each}}
-</option>
-  </select>
-</script>
+    <script id="shoeColorsDropDown" type="text/handlebars-x">
+        Colours: <select class="colours">
+        {{#each colorList}}
+          <option id="colorOptions">{{Colour}}</option>
+        {{/each}}
+      </select>
+    </script>
+    <div class="colorDisplay">
 
-<div id="colorDisplay">
-
-</div>
-
-
-    <!-- <div class="colors">
-        Colours: <select class="shoeColors">
-  <option name="color"></option>
-  <option name="color">Black</option>
-  <option name="color">Brown</option>
-  <option name="color">Tan</option>
-
-</select> -->
     </div>
-    <div class="sizes">
-        Size: <select class="shoeSize">
-  <option name="number"></option>
-  <option name="number">6</option>
-  <option name="number">7</option>
-  <option name="number">8</option>
-  <option name="number">9</option>
-  <option name="number">10</option>
-</div>
-<hr>
-<div class="stocks">
-  Stock Available: <select>
-    Stock Available: <select  class="Stock">
-    <option name="shoe"></option>
-    <option name="shoe">Barker</option>
-    <option name="shoe">Crocket & Jones</option>
-    <option name="shoe">Bass</option>
-    <option name="shoe">Florsheim</option>
-  </select>
+
+    <script id="shoeSizeDropDown" type="text/handlebars-x">
+        Sizes: <select class="sizes">
+        {{#each sizeList}}
+          <option id="sizeOptions">{{Size}}</option>
+        {{/each}}
+      </select>
+    </script>
+    <div class="sizeDisplay">
+
     </div>
+
+
+    <script id="shoeBrandsDropDown" type="text/handlebars-x">
+        Brands: <select class="brands">
+        {{#each brandList}}
+          <option id="brandsOptions">{{Brand}}</option>
+        {{/each}}
+      </select>
+    </script>
+    <div class="displayBrands">
+
+    </div>
+
+
+
+
     <div class="checkButton">
-      <button id="check" onclick="checkingStock()">Check Stock</button>
+        <button id="check" onclick="checkingStock()">Check Stock</button>
     </div>
     <div class="displayStock">
-      <button type="button" class="addButton" name="button">Add</button>
-      <input type="text" name="text" class="brand" placeholder="Brand..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <input type="text" name="text" class="size" placeholder="Size..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <input type="text" name="text" class="colour" placeholder="Colour..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <input type="text" name="text" class="price" placeholder="Price...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <input type="text" name="text" class="stock" placeholder="Stock...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <button type="button" class="addButton" name="button">Add</button>
+        <input type="text" name="text" class="brand" placeholder="Brand..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="text" class="size" placeholder="Size..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="text" class="colour" placeholder="Colour..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="text" class="price" placeholder="Price..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="text" class="stock" placeholder="Stock...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     </div>
-  <hr>
+    <hr>
     <h1>Stock Available</h1>
     <div id="tableStock">
 
