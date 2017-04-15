@@ -25,14 +25,14 @@ h1{
   padding-bottom: 20px;
 }
 .sizes{
-  padding-top: 20px;
+  margin-top: 20px;
 }
 .checkButton{
   padding-top: 30px;
-}
-.displayStock{
-  padding-top: 20px;
   padding-bottom: 20px;
+}
+.brands{
+margin-top: 20px;
 }
 .addButton{
   border-radius: 4px;
