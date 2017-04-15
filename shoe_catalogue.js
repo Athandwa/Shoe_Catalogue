@@ -66,43 +66,49 @@ var shoes = [{
 var myTemplate = document.querySelector('.shoeTamplate').innerHTML;
 var compiledTemplate = Handlebars.compile(myTemplate);
 
+var shoeColorsDropDown = document.getElementById('shoeColorsDropDown');
+var compiledColorTemplate = Handlebars.compile(shoeColorsDropDown.innerHTML);
+
+
+var handleColors = compiledColorTemplate({
+    colorList: shoes
+});
+
+document.querySelector('.colorDisplay').innerHTML = handleColors;
+
+var shoeSizeDropDown = document.getElementById('shoeSizeDropDown');
+var compiledSizesTemplate = Handlebars.compile(shoeSizeDropDown.innerHTML);
+
+var handleSizes = compiledSizesTemplate({
+    sizeList: shoes
+});
+
+document.querySelector('.sizeDisplay').innerHTML = handleSizes;
+
+
+var shoeBrandsDropDown = document.getElementById('shoeBrandsDropDown');
+var compiledBrandsTemplate = Handlebars.compile(shoeBrandsDropDown.innerHTML);
+
+var handleBrands = compiledBrandsTemplate({
+    brandList: shoes
+});
+
+document.querySelector('.displayBrands').innerHTML = handleBrands;
+
+
 function checkingStock() {
 
-    var shoeType = document.querySelector('.Stock').value;
-    var shoeSize = document.querySelector('.shoeSize').value;
-    var shoeColors = document.querySelector('.shoeColors').value;
-    var checkedShoes = [];
-
-    //filter the data - find the elements that you want to display
-
-    if (shoeColors == '') {
-        var stockListHtml = compiledTemplate({
-            shoeList: shoes
-        })
-        return document.getElementById('tableStock').innerHTML = stockListHtml;
-
-    }
-
-    var filteredList = [];
-    for (var i = 0; i < shoes.length; i++) {
-        var shoe = shoes[i];
-        //
-        if (shoe.Colour == shoeColors) {
-            filteredList.push(shoe);
-        }
-    }
-    //display the elements...
-
+    alert(Handlebars);
     var stockListHtml = compiledTemplate({
-        shoeList: filteredList
-    });
-    document.getElementById('tableStock').innerHTML = stockListHtml;
+        shoeList: shoes
+    })
+    return document.getElementById('tableStock').innerHTML = stockListHtml;
 }
 
 
-var add = document.querySelector('.addButton');
+var addButton = document.querySelector('.addButton');
 
-add.addEventListener('click', function() {
+addButton.addEventListener('click', function() {
 
     var stock = document.querySelector('.stock');
     var price = document.querySelector('.price');
@@ -124,22 +130,6 @@ add.addEventListener('click', function() {
         Brand: brand.value,
         Colour: colour.value
     };
-    console.log(shoeList);
     shoes.push(shoeList);
 
 });
-
-
-
-
-var colorTemp = document.querySelector('.colorTemp');
-var compileColor = Handlebars.compile(colorTemp.innerHTML);
-var colorDisplay = document.getElementById('colorDisplay');
-
-
-(function () {
-  var results = compileColor({
-    color: shoes});
- colorDisplay.innerHTML = results;
-})
-()
