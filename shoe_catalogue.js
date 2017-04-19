@@ -131,5 +131,34 @@ addButton.addEventListener('click', function() {
         Colour: colour.value
     };
     shoes.push(shoeList);
+(function () {
 
+    var handleColors = compiledColorTemplate({
+        colorList: shoes
+    })
+    document.querySelector('.colorDisplay').innerHTML = handleColors;
+})
+(),
+
+(function () {
+
+  var handleSizes = compiledSizesTemplate({
+      sizeList: shoes
+  });
+
+  document.querySelector('.sizeDisplay').innerHTML = handleSizes;
+
+})
+(),
+
+(function () {
+
+  var handleBrands = compiledBrandsTemplate({
+      brandList: shoes
+  });
+
+  document.querySelector('.displayBrands').innerHTML = handleBrands;
+
+})
+()
 });
