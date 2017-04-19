@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div data-role="page" id="pageone">
     <script type="text/x-handlebars-tamplate" class="shoeTamplate">
         <table>
             <thead>
@@ -72,11 +73,12 @@
 
     </div>
 
-
-
-
     <div class="checkButton">
         <button id="check" onclick="checkingStock()">Check Stock</button>
+    </div>
+
+    <div class="srchBtn">
+      <button type="search" name="Search">Search</button>
     </div>
     <div class="displayStock">
         <button type="button" class="addButton" name="button">Add</button>
@@ -91,6 +93,11 @@
     <div id="tableStock">
 
     </div>
+
+    <center><div data-role="footer">
+  <h5>My Footer</h>
+</div></center>
+</div>
 </body>
 <script src="shoe_catalogue.js" charset="utf-8"></script>
 
