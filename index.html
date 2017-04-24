@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <div data-role="page" id="pageone">
     <script type="text/x-handlebars-tamplate" class="shoeTamplate">
         <table>
             <thead>
@@ -37,10 +36,15 @@
         <a href="#men">Men's Shoes</a>
         <a href="#about">About</a>
     </div>
-    <h1>Shoe Catalogue...</h1>
+    <div class="heading">
+      <!-- background-image: url("Bass.jpg") -->
+      <h1>Shoe Catalogue...</h1>
+    </div>
+<div class="container">
 
     <script id="shoeColorsDropDown" type="text/handlebars-x">
         Colours: <select class="colours">
+        <option>All</option>
         {{#each colorList}}
           <option id="colorOptions">{{Colour}}</option>
         {{/each}}
@@ -52,6 +56,7 @@
 
     <script id="shoeSizeDropDown" type="text/handlebars-x">
         Sizes: <select class="sizes">
+        <option>All</option>
         {{#each sizeList}}
           <option id="sizeOptions">{{Size}}</option>
         {{/each}}
@@ -64,6 +69,7 @@
 
     <script id="shoeBrandsDropDown" type="text/handlebars-x">
         Brands: <select class="brands">
+        <option>All</option>
         {{#each brandList}}
           <option id="brandsOptions">{{Brand}}</option>
         {{/each}}
@@ -76,10 +82,9 @@
     <div class="checkButton">
         <button id="check" onclick="checkingStock()">Check Stock</button>
     </div>
-
     <div class="srchBtn">
-      <button type="search" name="Search">Search</button>
-    </div>
+  <button type="search" name="Search">Search</button>
+</div>
     <div class="displayStock">
         <button type="button" class="addButton" name="button">Add</button>
         <input type="text" name="text" class="brand" placeholder="Brand..."><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -89,15 +94,11 @@
         <input type="text" name="text" class="stock" placeholder="Stock...">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     </div>
     <hr>
-    <h1>Stock Available</h1>
+    <h2>Stock Available</h2>
     <div id="tableStock">
 
     </div>
-
-    <center><div data-role="footer">
-  <h5>My Footer</h>
-</div></center>
-</div>
+  </div>
 </body>
 <script src="shoe_catalogue.js" charset="utf-8"></script>
 
