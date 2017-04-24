@@ -131,34 +131,70 @@ addButton.addEventListener('click', function() {
         Colour: colour.value
     };
     shoes.push(shoeList);
-(function () {
+    (function() {
 
-    var handleColors = compiledColorTemplate({
-        colorList: shoes
+        var handleColors = compiledColorTemplate({
+            colorList: shoes
+        })
+        document.querySelector('.colorDisplay').innerHTML = handleColors;
     })
-    document.querySelector('.colorDisplay').innerHTML = handleColors;
-})
-(),
+    (),
 
-(function () {
+    (function() {
 
-  var handleSizes = compiledSizesTemplate({
-      sizeList: shoes
-  });
+        var handleSizes = compiledSizesTemplate({
+            sizeList: shoes
+        });
 
-  document.querySelector('.sizeDisplay').innerHTML = handleSizes;
+        document.querySelector('.sizeDisplay').innerHTML = handleSizes;
 
-})
-(),
+    })
+    (),
 
-(function () {
+    (function() {
 
-  var handleBrands = compiledBrandsTemplate({
-      brandList: shoes
-  });
+        var handleBrands = compiledBrandsTemplate({
+            brandList: shoes
+        });
 
-  document.querySelector('.displayBrands').innerHTML = handleBrands;
+        document.querySelector('.displayBrands').innerHTML = handleBrands;
 
-})
-()
+    })
+    ()
+});
+
+var searchBtn = document.querySelector('.srchBtn')
+
+searchBtn.addEventListener("click", function() {
+
+    var shoeSearch = [];
+
+    var sizesDropdown = document.querySelector(".sizes");
+    var sizeSelectedIndex = sizesDropdown.selectedIndex;
+    var selectedSize = sizesDropdown.options[sizeSelectedIndex].value;
+
+    var colorsDropdown = document.querySelector(".colours");
+    var colourSelectedIndex = colorsDropdown.selectedIndex;
+    var selectedColour = colorsDropdown.options[colourSelectedIndex].value;
+
+    var brandsDropdown = document.querySelector(".brands");
+    var brandsSelectedIndex = brandsDropdown.selectedIndex;
+    var selectedBrands = brandsDropdown.options[brandsSelectedIndex].value;
+
+    //if (selectedColour === "All" && selectedSize === "All" && selectedBrands === "All") {
+        //shoeSearch = shoes;
+    //} else {
+        for (var i = 0; i < shoes.length; i++) {
+            var shoe = shoes[i];
+            var matchingColours = selectedColour === "All" || selectedColour === shoe.Colour;
+            var matchingSize = selectedSize === "All" || selectedSize === shoe.Size;
+            var matchingBrands = selectedBrands === "All" || selectedBrands === shoe.Brand;
+            if (matchingColours && matchingSize && matchingBrands) {
+                shoeSearch.push(shoe);
+            }
+        };
+    var SearchedShoe = compiledTemplate({
+        shoeList: shoeSearch
+    });
+    tableStock.innerHTML = SearchedShoe;
 });
